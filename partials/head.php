@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Fruitask">
-    <title> Fruitask</title>
+    <title> Profile - Fruitask</title>
     <link href="/css/uicons-regular-rounded.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
