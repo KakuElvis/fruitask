@@ -1,393 +1,73 @@
 <?php include './partials/head.php';?>
-    <?php include './partials/nav.php';?>
+<?php include './Connect-db.php';?>
 
-    <div class="py-16 bg-background overflow-hidden">
-        <div class="container m-auto px-6 space-y-8 md:px-12 lg:px-20">
-            <!-- search -->
-            <div class="  overflow-hidden ]">
-                <div class="container m-auto px-6 space-y-8 md:px-12 lg:px-20">
-                  <form>   
-                    <div class="relative">
-                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <svg class="w-5 h-5 text-gray-500 :text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </div>
-                        <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  " placeholder="Search for Shoes, Bags, Suit ...." required>
-                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+if (isset($_POST["Submit"])){
+    for($index = 0; $index < $Emailarrlength; $index++) {
+        if (urldecode($Email[$index]) == $_POST["email"]){
+            if (urldecode($Password[$index]) == $_POST["password"]){
+                require_once("home.php");
+
+                
+            } else {
+                //echo "hidden";
+            }
+    
+}}}
+
+
+?>
+
+
+
+
+    <div id="logout_layout"  class="max-w-md max-h-md mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
+        <h1 class="text-4xl font-medium">Fruitask</h1>
+        <p class="text-slate-500">Hi, Welcome back 👋</p>
+
+        <form action="" method="POST" class="my-10">
+            <div class="flex flex-col space-y-5">
+                <label for="email">
+                    <p class="font-medium text-slate-700 pb-2">Email address</p>
+                    <input id="email" name="email" type="email" class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter email address">
+                </label>
+                <label for="password">
+                    <p class="font-medium text-slate-700 pb-2">Password</p>
+                    <input id="password" name="password" type="password" require class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter your password">
+                </label>
+                <div class="flex flex-row justify-between">
+                    <div>
+                        <label for="remember" class="">
+                            <input type="checkbox" id="remember" class="w-4 h-4 border-slate-200 focus:bg-indigo-600">
+                            Remember me
+                        </label>
                     </div>
-                  </form>
-                </div>
-            </div>
-            <!-- search -->
-
-            <div class="   md:-mx-8  bg-white rounded overflow-hidden">
-                <div class="bg-second-main p-2">
-                    <p class="text-white ml-5 text-xl">Top suit</p>
-                </div>
-                <div class="py-16 bg-white">  
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="-mb-6 -mt-10 flex gap-8 flex-col lg:grid lg:grid-cols-5">
-                                <div class="bg-background rounded p-2   hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <span class=" inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-second-main rounded-full">-15%</span>
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-background rounded p-2   hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="bg-background rounded p-2   hover:scale-105  transition ease-in-out hover:shadow-xll">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-background rounded p-2   hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-background roundedg p-2   hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
+                    <div>
+                        <a href="#" class="font-medium text-indigo-600">Forgot Password?</a>
                     </div>
                 </div>
+                <button id="Submit" type="Submit" name="Submit" class="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg>
+                      <span>Login</span>
+                </button>
+                <p id='on'class="text-center">Not registered yet? <a href="#" class="text-indigo-600 font-medium inline-flex space-x-1 items-center"><span>Register now </span><span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg></span></a></p>
             </div>
-
-            <!-- Fashion -->
-            <div class="   md:-mx-8  bg-white rounded overflow-hidden">
-                <div class="bg-main p-2">
-                    <p class="text-white ml-5 text-xl">Fashion | Top Deals</p>
-                </div>
-                <div class="py-16 bg-white">  
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="-mb-6 -mt-10 flex gap-8 flex-col lg:grid lg:grid-cols-5">
-                                <div class="bg-second-main rounded p-2   shadow-2xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <span class=" inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-main rounded-full">-15%</span>
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-second-main rounded p-2   shadow-2xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-second-main rounded p-2   shadow-2xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-second-main rounded p-2   shadow-2xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                                <div class="bg-second-main roundedg p-2   shadow-2xl">
-                                    <div class="flex flex-col items-center">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/suit/suit3.png" alt="" class="hover:rotate-1"></a> 
-                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="  md:-mx-8  bg-white rounded overflow-hidden">
-                <div class="py-16 bg-white">  
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="-mb-6 -mt-10 space-y-2">
-                                <div class="flex gap-6 flex-col lg:grid lg:grid-cols-8">
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-second-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-second-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-second-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                        <div class="bg-main rounded   ">
-                                            <div class="flex flex-col items-center">
-                                                <div class="">
-                                                    <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="text-center">Heals</p>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fashion -->
-
-            <!-- prodcut category -->
-            <div class="   md:-mx-8  bg-white rounded overflow-hidden">
-                <div class="bg-second-main p-2">
-                    <p class="text-white ml-5 text-xl">We've got all your needs covered </p>
-                </div>
-                <div class="py-16 bg-white">  
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="-mb-6 -mt-10 flex gap-4 flex-col lg:grid lg:grid-cols-8">
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded   ">
-                                        <div class="flex flex-col items-center">
-                                            <div class="">
-                                                <a href="#"><img  src="./img/suit/suit3.png" alt=""></a> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Heals</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- product category -->
-
-            <!-- top brands -->
-            <div class="   md:-mx-8  bg-white rounded overflow-hidden">
-                <div class="bg-main p-2">
-                    <p class="text-white ml-5 text-xl">Top Brands</p>
-                </div>
-                <div class="py-16 bg-white">  
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="-mb-6 -mt-10 flex gap-4 flex-col lg:grid lg:grid-cols-6">
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded hover:scale-105  transition ease-in-out hover:shadow-xl">
-                                    <div class="bg-white rounded p-2   shadow-2xl">
-                                        <div class="">
-                                            <a href="#"><img  src="./img/cards/visa.png" alt="" class="hover:animate-rotate-1"></a> 
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- top brands -->
-
-            <!-- courasel -->
-          
-
-            
-            <!-- <a href="https://www.buymeacoffee.com/dgauderman" target="_blank" class="md:absolute bottom-0 right-0 p-4 float-right animate-bounce">
-            <img src="https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-3.svg" alt="Buy Me A Coffee" class="transition-all rounded-full w-14 -rotate-45 hover:shadow-sm shadow-lg ring hover:ring-4 ring-white">
-            </a> -->
-            
-
-            
-
+        </form>
+        <div class="my-5">
+            <button id="" type="" name="" class="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""> <span>Login with Google</span>
+            </button>
         </div>
-    </div> 
+    </div>
+</body>
+</html>
 
-<?php include "./partials/footer.php"?>
+
+
